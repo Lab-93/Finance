@@ -6,7 +6,7 @@ from os import system as command
 class FSLinker:
 
     def __init__( self, data, date,
-                  asset_basepath: str = "/server/front-end/assets/data-science/reports",
+                  asset_basepath: str = "/server/front-end/data-science/reports",
                   target_directory: str = "/server/front-end/_posts/reports"
     ):
 

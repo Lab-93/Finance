@@ -43,7 +43,7 @@ arguments.add_argument( "-eM", "--end-month", default = today.month )
 arguments.add_argument( "-eY", "--end-year",  default = today.year  )
 
 # Allow specification of an output path.
-arguments.add_argument( "-O", "--output-directory", default = "/server/front-end/assets")
+arguments.add_argument( "-O", "--output-directory", default = "/server/front-end/")
 
 
 arguments = arguments.parse_args()
