@@ -71,7 +71,7 @@ class GraphingReports:
         datestring = datetime.strftime(start, "%Y/%m/%d")
 
         # Organize data array into packet hashmap for passing to Candlestick class.
-        self.packet = {
+        drawCandlestick( {
 
             "time":   [ line.timestamp for symbol in data for line in data[symbol] ],
             "high":   [ line.high for symbol in data for line in data[symbol]      ],
@@ -80,7 +80,4 @@ class GraphingReports:
             "close":  [ line.close for symbol in data for line in data[symbol]     ],
             "symbol": [ line.symbol for symbol in data for line in data[symbol] ][0]
 
-        }
-
-        # Draw the candlestick graph at the specially formulated filepath.
-        drawCandlestick( self.packet, f"{output}/{datestring}")
+        }, f"{output}/{datestring}")
