@@ -42,19 +42,7 @@ AlpacaAPI = AccountDetails(
 )
 
 
-CryptoPrices = PriceData(
-    asset_type = "crypto", credentials = \
-    ( AdminDB.Retrieve( user = "admin",
-                        platform = "alpaca_key" ),
-      AdminDB.Retrieve( user = "admin",
-                        platform = "alpaca_secret" ) )
-)
-
-def Ticker():
-    while True:
-        sleep(1)
-        yield format(CryptoPrices.CurrentPrice("BTC/USD"), ".2f")
-
+# Draw forth, the trading aspect of the brokerage account.
 TradingBroker = TradeBroker(AlpacaAPI.client)
 
 
