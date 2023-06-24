@@ -51,14 +51,13 @@ class GraphingReports:
     This is the first Top-Level implementation of the graphing submodule; where we can access the underlying
     functionality in the form of a command-line API.
     """
-    def __init__(self, start=yesterday, end=today,
+    def __init__(self, start=yesterday, end=today, symbols: list = [ "BTC/USD" ]
         output = "/server/front-end/assets/data-science/reports" ):
 
         # Collect High, Low, Open, Close, and Times for the given symbol.
-        # TODO: Allow for custom symbol entries.
         # TODO: Allow for custom timeframes.
         # TODO: Retrieve credentials from environment.
-        data = Queries( start = start, end = end, symbols = [ "BTC/USD" ],
+        data = Queries( start = start, end = end, symbols = symbols,
                         timeframe = "hour",
                         credentials = ( AdminDB.Retrieve( user     = "admin",
                                                           platform = "alpaca_key" ),
